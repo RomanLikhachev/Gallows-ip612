@@ -4,10 +4,21 @@
 #include <algorithm>
 #include <ctime>
 #include <cctype>
+#include <fstream>
 using namespace std;
 
 int main()
 {
+    ifstream fin;
+    ofstream fout;
+    string s ;
+    int t=0;
+    char *str = new char [1024];
+    int i=0;
+    int g;
+    int p;
+    
+    
   //подготовка
     const int MAX_WRONG = 8; //максимально допустимое количество ошибок
     vector<string>words; //подборка слов дл€ загадывывани€
