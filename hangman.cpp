@@ -18,6 +18,12 @@ int main()
     int g;
     int p;
     
+    cout<<"Выбери категорию: "<<endl;
+    cout<<"1) Кино"<<endl;
+    cout<<"2) Спорт"<<endl;
+    cout<<"3) Музыка"<<endl;
+    cin>>p;
+    
     
   //подготовка
     const int MAX_WRONG = 8; //максимально допустимое количество ошибок
