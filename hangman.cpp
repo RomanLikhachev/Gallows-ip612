@@ -24,13 +24,57 @@ int main()
     cout<<"3) Музыка"<<endl;
     cin>>p;
     
+     if(p==1)
+    {
+    ifstream base("Cinema.txt");
+    while (!base.eof())
+    {
+        base.getline(str, 1024, '\n');
+        i++;
+    }
+    base.close();
+    delete str;
+    
+    fin.open("Cinema.txt");
+     if (fin.fail())
+     {
+       cout<<"Error\n";
+       exit(1);}
+ 
+     fout.open("slovo.txt");
+     if (fout.fail())
+     {
+       cout<<"Error\n";
+       exit(1);}
+       srand(time(NULL));
+        g=rand()%i;
+     while(!fin.eof()) {
+        getline(fin , s ) ;
+        t++;
+        if (t==g) fout<<s;
+     }
+    
+     fin.close();
+     fout.close();
+     }
+   
+     
+    FILE *f; 
+    int MAXLEN=15;
+   
+    char w[MAXLEN]; 
+ 
+    if ( (f = fopen("slovo.txt", "r")) == NULL ) exit(0); 
+    while ( !feof(f) ) { 
+       
+        fgets(w, MAXLEN, f); 
+    } 
+    fclose(f); 
     
   //подготовка
     const int MAX_WRONG = 8; //максимально допустимое количество ошибок
     vector<string>words; //подборка слов для загадывывания
-    words.push_back("SISTER");
-    words.push_back("MAMA");
-    words.push_back("PAPA");
+    words.push_back(w);
     srand(static_cast<unsigned int>(time(0)));
     random_shuffle(words.begin(), words.end());
     const string THE_WORD = words[0]; // слово для отдгадывания
