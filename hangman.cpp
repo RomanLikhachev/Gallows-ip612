@@ -7,7 +7,6 @@
 #include <fstream>
 using namespace std;
 
-
 void category(int q, char *str, string s)
 {
     ifstream fin;
@@ -31,17 +30,20 @@ void category(int q, char *str, string s)
      if (fin.fail())
      {
        cout<<"Error\n";
-       exit(1);}
+       exit(1);
+       }
  
      fout.open("slovo.txt");
      if (fout.fail())
      {
        cout<<"Error\n";
-       exit(1);}
+       exit(1);
+       }
        srand(time(NULL));
         g=rand()%i;
-     while(!fin.eof()) {
-        getline(fin , s ) ;
+     while(!fin.eof()) 
+     {
+        getline(fin, s) ;
         t++;
         if (t==g) fout<<s;
      }
@@ -49,6 +51,7 @@ void category(int q, char *str, string s)
      fin.close();
      fout.close();
      }
+     
     if(q==2)
     {
     ifstream base("Sport.txt");
@@ -59,26 +62,27 @@ void category(int q, char *str, string s)
     }
     base.close();
     delete str;
-    
     fin.open("Sport.txt");
      if (fin.fail())
      {
        cout<<"Error\n";
-       exit(1);}
+       exit(1);
+       }
  
      fout.open("slovo.txt");
      if (fout.fail())
      {
        cout<<"Error\n";
-       exit(1);}
+       exit(1);
+       }
        srand(time(NULL));
        g=rand()%i;
-     while(!fin.eof()) {
-        getline(fin , s ) ;
+     while(!fin.eof()) 
+     {
+        getline(fin, s);
         t++;
         if (t==g) fout<<s;
      }
-    
      fin.close();
      fout.close();
      }
@@ -93,44 +97,40 @@ void category(int q, char *str, string s)
     }
     base.close();
     delete str;
-    
     fin.open("Music.txt");
      if (fin.fail())
      {
        cout<<"Error\n";
-       exit(1);}
- 
+       exit(1);
+       }
      fout.open("slovo.txt");
      if (fout.fail())
      {
        cout<<"Error\n";
-       exit(1);}
+       exit(1);
+       }
        srand(time(NULL));
        g=rand()%i;
-     while(!fin.eof()) {
-        getline(fin , s ) ;
+     while(!fin.eof())
+     {
+        getline(fin , s );
         t++;
         if (t==g) fout<<s;
      }
-    
      fin.close();
-     fout.close();
-     
+     fout.close(); 
      }
-
      }
-
 
 void game(char *str)
 {
-      FILE *f; 
+    FILE *f; 
     int MAXLEN=15;
-   
     char w[MAXLEN]; 
  
     if ( (f = fopen("slovo.txt", "r")) == NULL ) exit(0); 
-    while ( !feof(f) ) { 
-       
+    while ( !feof(f) ) 
+    { 
         fgets(w, MAXLEN, f); 
     } 
     fclose(f); 
@@ -166,9 +166,9 @@ void game(char *str)
       cin>>guess;
       string buk="1234567890абвгдеЄжзийклмнопрстуфхцчшщьыъэю€јЅ¬√ƒ≈®∆«»… ЋћЌќѕ–—“”‘’÷„Ўў№џЏЁёя-.,?/[]";
        if(buk.find(guess) != string::npos)
-  {
-             for(int z=0; z<25; z++)
-    {
+       {
+        for(int z=0; z<25; z++)
+        {
            cout<<"\n"; 
             }
            cout<<"Error!\n";
@@ -186,46 +186,44 @@ void game(char *str)
       used+=guess;
       if(THE_WORD.find(guess) !=string::npos)
       {
-                                for(int z=0; z<20; z++)
-    {
+       for(int z=0; z<20; z++)
+       {
            cout<<"\n"; 
             }
-            cout<<"“ы прав! "<<guess<<" в слове есть.\n";
-            //обновить переменную soFar, включив в нее новую угаданную букву
-            for(int i=0; i<THE_WORD.length(); ++i)
-            {
-                    if(THE_WORD[i]==guess)
-                    {
-                                          soFar[i]=guess;
-                                          }
-                                          }
-                                          }
-                    else
-                    {
-                          for(int z=0; z<20; z++)
-    {
-           cout<<"\n"; 
-            }
-                        cout<<"»звини. "<<guess<<" в слове нет.\n";
-                        ++wrong;
-                        }
-                        }
+       cout<<"“ы прав! "<<guess<<" в слове есть.\n";
+       //обновить переменную soFar, включив в нее новую угаданную букву
+       for(int i=0; i<THE_WORD.length(); ++i)
+       {
+              if(THE_WORD[i]==guess)
+              {
+                soFar[i]=guess;
+                  }
+                  }
+                  }
+              else
+              {
+                for(int z=0; z<20; z++)
+                {
+                  cout<<"\n"; 
+                  }
+       cout<<"»звини. "<<guess<<" в слове нет.\n";
+       ++wrong;
+             }
+             }
       //конец игры
       if(wrong==MAX_WRONG)
       {
       cout<<"\n“еб€ повесили!";
-      }
+          }
       else
       {
-          cout<<"\n“ы победил!";
+         cout<<"\n“ы победил!";
           }
       cout<<"\n«агаданное слово: " <<THE_WORD<<endl;
-     }
-
+      }
 
 int main()
-{
-   
+{  
     string s;
     int q;
     char *str = new char [1024];
@@ -237,48 +235,48 @@ int main()
     cout<<"3) ћузыка"<<endl;
     cin>>p;
     
-      string bukv="4567890абвгдеЄжзийклмнопрстуфхцчшщьыъэю€јЅ¬√ƒ≈®∆«»… ЋћЌќѕ–—“”‘’÷„Ўў№џЏЁёяqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+    string bukv="4567890абвгдеЄжзийклмнопрстуфхцчшщьыъэю€јЅ¬√ƒ≈®∆«»… ЋћЌќѕ–—“”‘’÷„Ўў№џЏЁёяqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
     
     
-       if(bukv.find(p) != string::npos)
-  {
+    if(bukv.find(p) != string::npos)
+     {
         for(int z=0; z<20; z++)
-    {
+        {
            cout<<"\n"; 
             }
-             cout<<"Error! —мотри на меню.\n";
-             goto next;
+     cout<<"Error! —мотри на меню.\n";
+     goto next;
             }  
-    string buka="-4-5-6-7-8-9";
-          if(buka.find(p) != string::npos)
-  {
+     string buka="-4-5-6-7-8-9";
+     if(buka.find(p) != string::npos)
+     {
         for(int z=0; z<20; z++)
-    {
+        {
            cout<<"\n"; 
             }
-             cout<<"Error! —мотри на меню.\n";
-             goto next;
+     cout<<"Error! —мотри на меню.\n";
+     goto next;
             }      
-               string buk1="1";
+   
+      string buk1="1";
       string buk2="2";
       string buk3="3";
+   
       if(buk1.find(p) != string::npos)
-         {
-             q=1;      
-                   }
-         if(buk2.find(p) != string::npos)
-         {
-             q=2;      
-                   }
-          if(buk3.find(p) != string::npos)
-         {
-             q=3;      
-                   }
-
-            
+      {
+            q=1;      
+              }
+      if(buk2.find(p) != string::npos)
+      {
+            q=2;      
+              }
+      if(buk3.find(p) != string::npos)
+      {
+            q=3;      
+              }
+         
     category(q, str, s);
-    game(str);
-    
-      system("PAUSE");
-      }
+    game(str);    
+    system("PAUSE");
+    }
       
