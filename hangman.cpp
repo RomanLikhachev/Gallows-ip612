@@ -161,8 +161,19 @@ void game(char *str)
       cout << "\nТут слово которое я загадал:\n" << soFar<< endl;
       
       char guess;
+      next:
       cout << "\n\nВаша буква: ";
       cin>>guess;
+      string buk="1234567890абвгдеёжзийклмнопрстуфхцчшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ-.,?/[]";
+       if(buk.find(guess) != string::npos)
+  {
+             for(int z=0; z<25; z++)
+    {
+           cout<<"\n"; 
+            }
+           cout<<"Error!\n";
+           goto next;
+           }
       guess = toupper(guess); //перевод в верхний регистр
       // так как загаданное слово записанно в верхнем регистре
       while (used. find(guess) != string::npos)
