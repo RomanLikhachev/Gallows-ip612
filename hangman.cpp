@@ -120,23 +120,10 @@ void category(int q, char *str, string s)
 
      }
 
-int main()
+
+void game(char *str)
 {
-   
-    string s;
-    int q;
-    char *str = new char [1024];
-    int p;
-    
-    cout<<"Выбери категорию: "<<endl;
-    cout<<"1) Кино"<<endl;
-    cout<<"2) Спорт"<<endl;
-    cout<<"3) Музыка"<<endl;
-    cin>>p;
-    
-    category(p, str, s);
-    
-    FILE *f; 
+      FILE *f; 
     int MAXLEN=15;
    
     char w[MAXLEN]; 
@@ -147,7 +134,7 @@ int main()
         fgets(w, MAXLEN, f); 
     } 
     fclose(f); 
-  //подготовка
+
     const int MAX_WRONG = 8; //максимально допустимое количество ошибок
     vector<string>words; //подборка слов для загадывывания
     words.push_back(w);
@@ -158,7 +145,13 @@ int main()
     string soFar(THE_WORD.size(), '-'); //часть слова, открытая на данный момент
     string used = ""; //уже отгаданные буквы
     
-      //основа
+    for(int z=0; z<15; z++)
+    {
+           cout<<"\n"; 
+            }
+    cout<<"Добро пожаловать в игру виселица. Удачи!\n";
+    
+    //основа
     
     while((wrong<MAX_WRONG) && (soFar != THE_WORD))
     {
@@ -182,6 +175,10 @@ int main()
       used+=guess;
       if(THE_WORD.find(guess) !=string::npos)
       {
+                                for(int z=0; z<20; z++)
+    {
+           cout<<"\n"; 
+            }
             cout<<"Ты прав! "<<guess<<" в слове есть.\n";
             //обновить переменную soFar, включив в нее новую угаданную букву
             for(int i=0; i<THE_WORD.length(); ++i)
@@ -194,7 +191,11 @@ int main()
                                           }
                     else
                     {
-                        cout<<"Извени. "<<guess<<" в слове нет.\n";
+                          for(int z=0; z<20; z++)
+    {
+           cout<<"\n"; 
+            }
+                        cout<<"Извини. "<<guess<<" в слове нет.\n";
                         ++wrong;
                         }
                         }
@@ -208,6 +209,25 @@ int main()
           cout<<"\nТы победил!";
           }
       cout<<"\nЗагаданное слово: " <<THE_WORD<<endl;
+     }
+
+
+int main()
+{
+   
+    string s;
+    int q;
+    char *str = new char [1024];
+    int p;
+    
+    cout<<"Выбери категорию: "<<endl;
+    cout<<"1) Кино"<<endl;
+    cout<<"2) Спорт"<<endl;
+    cout<<"3) Музыка"<<endl;
+    cin>>p;
+    
+    category(p, str, s);
+    game(str);
     
       system("PAUSE");
       }
