@@ -57,7 +57,74 @@ int main()
      fin.close();
      fout.close();
      }
-   
+       if(p==2)
+    {
+    ifstream base("Sport.txt");
+    while (!base.eof())
+    {
+        base.getline(str, 1024, '\n');
+        i++;
+    }
+    base.close();
+    delete str;
+    
+    fin.open("Sport.txt");
+     if (fin.fail())
+     {
+       cout<<"Error\n";
+       exit(1);}
+ 
+     fout.open("slovo.txt");
+     if (fout.fail())
+     {
+       cout<<"Error\n";
+       exit(1);}
+       srand(time(NULL));
+       g=rand()%i;
+     while(!fin.eof()) {
+        getline(fin , s ) ;
+        t++;
+        if (t==g) fout<<s;
+     }
+    
+     fin.close();
+     fout.close();
+     }
+     
+     if(p==3)
+     {
+    ifstream base("Music.txt");
+    while (!base.eof())
+    {
+        base.getline(str, 1024, '\n');
+        i++;
+    }
+    base.close();
+    delete str;
+    
+    fin.open("Music.txt");
+     if (fin.fail())
+     {
+       cout<<"Error\n";
+       exit(1);}
+ 
+     fout.open("slovo.txt");
+     if (fout.fail())
+     {
+       cout<<"Error\n";
+       exit(1);}
+       srand(time(NULL));
+       g=rand()%i;
+     while(!fin.eof()) {
+        getline(fin , s ) ;
+        t++;
+        if (t==g) fout<<s;
+     }
+    
+     fin.close();
+     fout.close();
+     
+     }
      
     FILE *f; 
     int MAXLEN=15;
