@@ -149,20 +149,20 @@ void game(char *str)
     {
            cout<<"\n"; 
             }
-    cout<<"ƒобро пожаловать в игру виселица. ”дачи!\n";
+    cout<<"Welcome game HANGMAN. Good Luck!\n";
     
     //основа
     
     while((wrong<MAX_WRONG) && (soFar != THE_WORD))
     {
-      cout << "\n\n” ¬ас есть всего "<<(MAX_WRONG - wrong);
-      cout << " попыток.\n";
-      cout << "\n¬ы использовали эти буквы:\n" <<used <<endl;
-      cout << "\n“ут слово которое € загадал:\n" << soFar<< endl;
+      cout << "\n\nY Vas est vsego "<<(MAX_WRONG - wrong);
+      cout << " popitok.\n";
+      cout << "\nVi ispolsovali eti bukvi:\n" <<used <<endl;
+      cout << "\nTyt slovo kotoroe ya zagadal:\n" << soFar<< endl;
       
       char guess;
       next:
-      cout << "\n\n¬аша буква: ";
+      cout << "\n\nVasha bukva: ";
       cin>>guess;
       string buk="1234567890абвгдеЄжзийклмнопрстуфхцчшщьыъэю€јЅ¬√ƒ≈®∆«»… ЋћЌќѕ–—“”‘’÷„Ўў№џЏЁёя-.,?/[]";
        if(buk.find(guess) != string::npos)
@@ -178,8 +178,8 @@ void game(char *str)
       // так как загаданное слово записанно в верхнем регистре
       while (used. find(guess) != string::npos)
       {
-            cout<<"\n“ы уже загадывал "<<guess<<endl;
-            cout<<"¬веди букву еще раз: ";
+            cout<<"\nTi yje zagadival "<<guess<<endl;
+            cout<<"Vvedi bukvu eshe raz: ";
             cin>>guess;
             guess=toupper(guess);
             }
@@ -190,7 +190,7 @@ void game(char *str)
        {
            cout<<"\n"; 
             }
-       cout<<"“ы прав! "<<guess<<" в слове есть.\n";
+       cout<<"Ti prav! "<<guess<<" v slove est.\n";
        //обновить переменную soFar, включив в нее новую угаданную букву
        for(int i=0; i<THE_WORD.length(); ++i)
        {
@@ -206,20 +206,20 @@ void game(char *str)
                 {
                   cout<<"\n"; 
                   }
-       cout<<"»звини. "<<guess<<" в слове нет.\n";
+       cout<<"Sorry. "<<guess<<" v slove net.\n";
        ++wrong;
              }
              }
       //конец игры
       if(wrong==MAX_WRONG)
       {
-      cout<<"\n“еб€ повесили!";
+      cout<<"\nTebya povesili!";
           }
       else
       {
-         cout<<"\n“ы победил!";
+         cout<<"\nYou win!";
           }
-      cout<<"\n«агаданное слово: " <<THE_WORD<<endl;
+      cout<<"\nZagadanoe slovo: " <<THE_WORD<<endl;
       }
 
 int main()
@@ -229,10 +229,10 @@ int main()
     char *str = new char [1024];
     char p;
     next:
-    cout<<"¬ыбери категорию: "<<endl;
-    cout<<"1)  ино"<<endl;
-    cout<<"2) —порт"<<endl;
-    cout<<"3) ћузыка"<<endl;
+    cout<<"Viberi kategori: "<<endl;
+    cout<<"1) Kino"<<endl;
+    cout<<"2) Sport"<<endl;
+    cout<<"3) Musika"<<endl;
     cin>>p;
     
     string bukv="4567890абвгдеЄжзийклмнопрстуфхцчшщьыъэю€јЅ¬√ƒ≈®∆«»… ЋћЌќѕ–—“”‘’÷„Ўў№џЏЁёяqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
@@ -244,7 +244,7 @@ int main()
         {
            cout<<"\n"; 
             }
-     cout<<"Error! —мотри на меню.\n";
+     cout<<"Error! Smotri na menu.\n";
      goto next;
             }  
      string buka="-4-5-6-7-8-9";
@@ -254,7 +254,7 @@ int main()
         {
            cout<<"\n"; 
             }
-     cout<<"Error! —мотри на меню.\n";
+     cout<<"Error! Smotri na menu.\n";
      goto next;
             }      
    
