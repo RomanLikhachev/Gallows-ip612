@@ -7,24 +7,16 @@
 #include <fstream>
 using namespace std;
 
-int main()
+
+void category(int q, char *str, string s)
 {
     ifstream fin;
     ofstream fout;
-    string s ;
     int t=0;
-    char *str = new char [1024];
-    int i=0;
     int g;
-    int p;
-    
-    cout<<"Выбери категорию: "<<endl;
-    cout<<"1) Кино"<<endl;
-    cout<<"2) Спорт"<<endl;
-    cout<<"3) Музыка"<<endl;
-    cin>>p;
-    
-     if(p==1)
+    int i=0;
+      
+    if(q==1)
     {
     ifstream base("Cinema.txt");
     while (!base.eof())
@@ -57,7 +49,7 @@ int main()
      fin.close();
      fout.close();
      }
-       if(p==2)
+    if(q==2)
     {
     ifstream base("Sport.txt");
     while (!base.eof())
@@ -91,7 +83,7 @@ int main()
      fout.close();
      }
      
-     if(p==3)
+     if(q==3)
      {
     ifstream base("Music.txt");
     while (!base.eof())
@@ -125,7 +117,25 @@ int main()
      fout.close();
      
      }
-     
+
+     }
+
+int main()
+{
+   
+    string s;
+    int q;
+    char *str = new char [1024];
+    int p;
+    
+    cout<<"Выбери категорию: "<<endl;
+    cout<<"1) Кино"<<endl;
+    cout<<"2) Спорт"<<endl;
+    cout<<"3) Музыка"<<endl;
+    cin>>p;
+    
+    category(p, str, s);
+    
     FILE *f; 
     int MAXLEN=15;
    
@@ -137,7 +147,6 @@ int main()
         fgets(w, MAXLEN, f); 
     } 
     fclose(f); 
-    
   //подготовка
     const int MAX_WRONG = 8; //максимально допустимое количество ошибок
     vector<string>words; //подборка слов для загадывывания
