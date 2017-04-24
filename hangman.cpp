@@ -11,9 +11,9 @@ int main()
   //подготовка
     const int MAX_WRONG = 8; //максимально допустимое количество ошибок
     vector<string>words; //подборка слов для загадывывания
-    words.push_back("сестра");
-    words.push_back("мама");
-    words.push_back("папа");
+    words.push_back("SISTER");
+    words.push_back("MAMA");
+    words.push_back("PAPA");
     srand(static_cast<unsigned int>(time(0)));
     random_shuffle(words.begin(), words.end());
     const string THE_WORD = words[0]; // слово для отдгадывания
