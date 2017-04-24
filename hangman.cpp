@@ -229,15 +229,54 @@ int main()
     string s;
     int q;
     char *str = new char [1024];
-    int p;
-    
+    char p;
+    next:
     cout<<"¬ыбери категорию: "<<endl;
     cout<<"1)  ино"<<endl;
     cout<<"2) —порт"<<endl;
     cout<<"3) ћузыка"<<endl;
     cin>>p;
     
-    category(p, str, s);
+      string bukv="4567890абвгдеЄжзийклмнопрстуфхцчшщьыъэю€јЅ¬√ƒ≈®∆«»… ЋћЌќѕ–—“”‘’÷„Ўў№џЏЁёяqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+    
+    
+       if(bukv.find(p) != string::npos)
+  {
+        for(int z=0; z<20; z++)
+    {
+           cout<<"\n"; 
+            }
+             cout<<"Error! —мотри на меню.\n";
+             goto next;
+            }  
+    string buka="-4-5-6-7-8-9";
+          if(buka.find(p) != string::npos)
+  {
+        for(int z=0; z<20; z++)
+    {
+           cout<<"\n"; 
+            }
+             cout<<"Error! —мотри на меню.\n";
+             goto next;
+            }      
+               string buk1="1";
+      string buk2="2";
+      string buk3="3";
+      if(buk1.find(p) != string::npos)
+         {
+             q=1;      
+                   }
+         if(buk2.find(p) != string::npos)
+         {
+             q=2;      
+                   }
+          if(buk3.find(p) != string::npos)
+         {
+             q=3;      
+                   }
+
+            
+    category(q, str, s);
     game(str);
     
       system("PAUSE");
