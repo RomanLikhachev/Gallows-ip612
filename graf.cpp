@@ -68,4 +68,48 @@ int main()
                    setcolor(15);
                    outtextxy (320,350,"Musika");
                    i=200; j=100;
+                    do
+                       {
+                       setlinestyle(0,0,8);
+                       setcolor(12);                   
+                       rectangle(i-1,j+60,i+400,j+140);
+                       k=getch();
+                       setlinestyle(0,0,8);
+                       setcolor(14);                     
+                       rectangle(i-1,j+60,i+400,j+140);
+                              
+                       if ((k==72) && (j>100)) j-=80;
+                       if ((k==80) && (j<250)) j+=80; 
+                
+                       if (j==100) 
+                                   {
+                                   setcolor(3); 
+                                   outtextxy (320,180,"Kino");
+                                   setcolor(15);
+                                   outtextxy (320,270,"Sport");
+                                   setcolor(15);
+                                   outtextxy (320,350,"Musika");
+                                   
+                                  
+                                   }
+                       if (j==180) {                            
+                                  
+								    setcolor(15);  
+                                   outtextxy (320,180,"Kino");
+                                   setcolor(2);
+                                   outtextxy (320,270,"Sport");
+                                   setcolor(15);
+                                   outtextxy (320,350,"Musika");
+                                                                             
+                                   }
+                       if (j==260) {
+                                
+                                  
+                                   setcolor(15);    
+                                   outtextxy (320,180,"Kino");
+                                   setcolor(15);
+                                   outtextxy (320,270,"Sport");
+                                   setcolor(4);
+                                   outtextxy (320,350,"Musika");
+                              }
                    
