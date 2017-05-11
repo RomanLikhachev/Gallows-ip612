@@ -29,3 +29,43 @@ int main()
      settextstyle(9,0,3);
      setcolor(RED);
      outtextxy (295,300,"Enter"); 
+      k=getch();
+        
+        if (k==13)
+                {
+                do {    
+                   cleardevice();
+                   settextstyle(0,0,4);
+                   setcolor(9);
+                   outtextxy (50,100,"The choice of category");
+                   
+                   setcolor(14);
+                   setlinestyle(0,0,2);
+                  
+                   for (i=0,j=160; i<4;i++)
+                       {
+                     
+                       x=200; y=j;
+                       moveto (x,y);
+                       x=600; y=j;
+                       lineto (x,y);
+                       j+=80;
+                       }
+                   
+                   for (i=0, j=200; i<2; i++)
+                       {
+                       x=j; y=160;
+                       moveto (x,y);
+                       x=j; y=400;
+                       lineto(x,y);
+                       j+=400;
+                       } 
+                   settextstyle(8,0,5);
+                   setcolor(3);
+                   outtextxy (320,180,"Kino");
+                   setcolor(15);
+                   outtextxy (320,270,"Sport");
+                   setcolor(15);
+                   outtextxy (320,350,"Musika");
+                   i=200; j=100;
+                   
