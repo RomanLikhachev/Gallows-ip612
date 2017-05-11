@@ -6,63 +6,205 @@
 #include <cctype>
 #include <fstream>
 #include "hangman.h"
+#include <graphics.h>
+#include <math.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 
 int main()
 {  
-    string s;
-    int q;
-    char *str = new char [1024];
-    char p;
-    next:
-    cout<<"Viberi kategori: "<<endl;
-    cout<<"1) Kino"<<endl;
-    cout<<"2) Sport"<<endl;
-    cout<<"3) Musika"<<endl;
-    cin>>p;
-    
-    string bukv="4567890абвгдеёжзийклмнопрстуфхцчшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯqwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-    
-    
-    if(bukv.find(p) != string::npos)
-     {
-        for(int z=0; z<20; z++)
-        {
-           cout<<"\n"; 
-            }
-     cout<<"Error! Smotri na menu.\n";
-     goto next;
-            }  
-     string buka="-4-5-6-7-8-9";
-     if(buka.find(p) != string::npos)
-     {
-        for(int z=0; z<20; z++)
-        {
-           cout<<"\n"; 
-            }
-     cout<<"Error! Smotri na menu.\n";
-     goto next;
-            }      
+ int k=0,i,j,t,tx,ty,l,g,h,z,c,d,w=0,o=0,b=0,tim=0;
+ int x=0,y=0,n,m,v;
+     string s;
+     int q;
+     char *str = new char [1024];
+     char p;
+     next:
+     initwindow (800,800);
+     setlocale(0,"RUS");
+     settextstyle(0,0,10);
+     setcolor(10);
+     outtextxy (300,200,"Hangman");
+     settextstyle(9,0,3);
+     setcolor(RED);
+     outtextxy (295,300,"Enter"); 
+        k=getch();
+        
+        if (k==13)
+                {
+                do {    
+                   cleardevice();
+                   settextstyle(0,0,4);
+                   setcolor(9);
+                   outtextxy (200,100,"The choice of category");
+                   
+                   setcolor(14);
+                   setlinestyle(0,0,2);
+                   //рисуем горизонтальные линии
+                   for (i=0,j=160; i<4;i++)
+                       {
+                       printf ("%d ",i);
+                       x=200; y=j;
+                       moveto (x,y);
+                       x=600; y=j;
+                       lineto (x,y);
+                       j+=80;
+                       }
+                   //рисуем вертикальные линии    
+                   for (i=0, j=200; i<2; i++)
+                       {
+                       x=j; y=160;
+                       moveto (x,y);
+                       x=j; y=400;
+                       lineto(x,y);
+                       j+=400;
+                       } 
+                   settextstyle(8,0,5);
+                   setcolor(3);
+                   outtextxy (320,180,"Kino");
+                   setcolor(15);
+                   outtextxy (320,270,"Sport");
+                   setcolor(15);
+                   outtextxy (320,350,"Musika");
+                   i=200; j=100;
+                   
+                   do
+                       {
+                       setlinestyle(0,0,8);
+                       setcolor(12);                   
+                       rectangle(i-1,j+60,i+400,j+140);
+                       k=getch();
+                       setlinestyle(0,0,8);
+                       setcolor(14);                     
+                       rectangle(i-1,j+60,i+400,j+140);
+                              
+                       if ((k==72) && (j>100)) j-=80;
+                       if ((k==80) && (j<250)) j+=80; 
+                
+                       if (j==100) 
+                                   {
+                                   setcolor(3); 
+                                   outtextxy (320,180,"Kino");
+                                   setcolor(15);
+                                   outtextxy (320,270,"Sport");
+                                   setcolor(15);
+                                   outtextxy (320,350,"Musika");
+                                   
+                                  
+                                   }
+                       if (j==180) {                            
+                                  
+								    setcolor(15);  
+                                   outtextxy (320,180,"Kino");
+                                   setcolor(2);
+                                   outtextxy (320,270,"Sport");
+                                   setcolor(15);
+                                   outtextxy (320,350,"Musika");
+                                                                             
+                                   }
+                       if (j==260) {
+                                
+                                  
+                                   setcolor(15);    
+                                   outtextxy (320,180,"Kino");
+                                   setcolor(15);
+                                   outtextxy (320,270,"Sport");
+                                   setcolor(4);
+                                   outtextxy (320,350,"Musika");
+                              }
+                              
+                                } while (k!=13) ;
+
+                   cleardevice();//очищает экран и переустанавливает текущую позицию 
+                //делае уровни
+                   switch (j)
+                            {
+                            case 100:
+                             	v=1;
+							 	category(v, str, s);
+                              	game(str); 
+							  	break;   
+                    /*        case 180:
+                            	v=2;
+                            	void category(int v, char *str, string s);
+                                game(str); 
+								break;     
+                            case 260:
+                            	v=3;
+                            	void category(int v, char *str, string s);
+                                game(str);   
+                                break;*/
+                                  
+                            } 
+                            
+                            
+}
+  while (d!=0); 
+                   
+                              
+                   settextstyle(8,0,5);
+                   setcolor(3); 
+                   outtextxy (280,620,"Новая Игра");
+                   setcolor(RED);
+                   outtextxy (340,700,"Выход");
+                   setlinestyle(0,0,4);
+                   for (i=0,j=600; i<3;i++)
+                                               {
+                                               x=200; y=j;
+                                               moveto (x,y);
+                                               x=600; y=j;
+                                               lineto (x,y);
+                                               j+=80;
+                                               }
+                   for (i=0, j=200; i<2; i++)
+                                               {
+                                               x=j; y=600;
+                                               moveto (x,y);
+                                               x=j; y=760;
+                                               lineto(x,y);
+                                               j+=400;
+                                               } 
+                
+
+                   i=200; j=540;
+                   setlinestyle(0,0,4);
+                
+                   do 
+                      {
+                      setcolor(6);                    
+                      rectangle(i,j+60,i+400,j+140);
+                      k=getch();
+                      setcolor(15);                    
+                      rectangle(i,j+60,i+400,j+140);
+                              
+                      if ((k==72) && (j>600)) j-=80;
+                      if ((k==80) && (j<580)) j+=80;
+                
+                      if (j==540) {                            
+                                  setcolor(3);
+                                  outtextxy (280,620,"Новая Игра");
+                                  setcolor (15);
+                                  outtextxy (340,700,"Выход");                                                         
+                                  }
+                      if (j==620) {
+                                  setcolor(15);
+                                  outtextxy (280,620,"Новая Игра");              
+                                  setcolor (RED);
+                                  outtextxy (340,700,"Выход");   
+                                  }    
+                
+                      } while (k!=13) ;
+                            
+                   } while (j!=620);      
+				    
+                                          
+             }
+  
    
-      string buk1="1";
-      string buk2="2";
-      string buk3="3";
-   
-      if(buk1.find(p) != string::npos)
-      {
-            q=1;      
-              }
-      if(buk2.find(p) != string::npos)
-      {
-            q=2;      
-              }
-      if(buk3.find(p) != string::npos)
-      {
-            q=3;      
-              }
          
-    category(q, str, s);
-    game(str);    
-    return 0;
-    }
+   
+
+    
       
