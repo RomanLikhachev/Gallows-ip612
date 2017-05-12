@@ -112,4 +112,28 @@ int main()
                                    setcolor(4);
                                    outtextxy (320,350,"Musika");
                               }
+                              
+                              } while (k!=13) ;
+
+                   cleardevice();
+               
+                   switch (j)
+                            {
+                            case 100:
+                             	v=1;
+							 	category(v, str, s);
+                              	game(str); 
+							  	break;   
+                            case 180:
+                            	v=2;
+                            	void category(int v, char *str, string s);
+                                game(str); 
+								break;     
+                            case 260:
+                            	v=3;
+                            	void category(int v, char *str, string s);
+                                game(str);   
+                                break;
+                                  
+                            } 
                    
