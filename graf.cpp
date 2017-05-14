@@ -135,5 +135,10 @@ int main()
                                 game(str);   
                                 break;
                                   
-                            } 
+                            
+                             } 
+                             } while (j!=260); 
+                             
+                         }
+                     }
                    
