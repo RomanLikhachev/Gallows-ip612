@@ -21,6 +21,7 @@ int main()
      int q;
      char *str = new char [1024];
      char p;
+     next:
      initwindow (800,800);
      setlocale(0,"RUS");
      settextstyle(0,0,10);
@@ -116,6 +117,7 @@ int main()
                               } while (k!=13) ;
 
                    cleardevice();
+               closegraph();
                
                    switch (j)
                             {
@@ -123,16 +125,19 @@ int main()
                              	v=1;
 							 	category(v, str, s);
                               	game(str); 
+                              	goto next;
 							  	break;   
                             case 180:
                             	v=2;
                             	void category(int v, char *str, string s);
-                                game(str); 
+                                game(str);
+                              	goto next; 
 								break;     
                             case 260:
                             	v=3;
                             	void category(int v, char *str, string s);
-                                game(str);   
+                                game(str);
+                              	goto next; 
                                 break;
                                   
                             
