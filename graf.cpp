@@ -14,13 +14,15 @@ using namespace std;
 
 int main()
 {  
- int k=0,i,j,t,tx,ty,l,g,h,z,c,d,w=0,o=0,b=0,tim=0;
- int x=0,y=0,n,m,v;
+ int k=0,i,j,v;
+ int x=0,y=0;
      string s;
      int q;
      char *str = new char [1024];
      char p;
-     next:
+     int r=1;;
+     while(r==1)
+     {
      initwindow (800,800);
      setlocale(0,"RUS");
      settextstyle(0,0,10);
@@ -126,7 +128,7 @@ int main()
                               	game(str); 
                               	system("PAUSE");
                               	system("CLS");
-                              	goto next;
+               //               	goto next;
 							  	break;   
                             case 180:
                             	v=2;
@@ -134,7 +136,7 @@ int main()
                                 game(str);
                                 system("PAUSE");
                                 system("CLS");
-                              	goto next; 
+            //                  	goto next; 
 								break;     
                             case 260:
                             	v=3;
@@ -142,13 +144,13 @@ int main()
                                 game(str);
                                 system("PAUSE");
                                 system("CLS");
-                              	goto next; 
+        //                      	goto next; 
                                 break;
                                   
                             
                              } 
                              } while (j!=260); 
-                             
+                         
                          }
                      }
-                   
+               }
