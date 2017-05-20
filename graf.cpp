@@ -8,7 +8,6 @@
 #include "hangman.h"
 #include <graphics.h>
 #include <math.h>
-#include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
 using namespace std;
@@ -125,18 +124,24 @@ int main()
                              	v=1;
 							 	category(v, str, s);
                               	game(str); 
+                              	system("PAUSE");
+                              	system("CLS");
                               	goto next;
 							  	break;   
                             case 180:
                             	v=2;
-                            	void category(int v, char *str, string s);
+                            	 category( v, str, s);
                                 game(str);
+                                system("PAUSE");
+                                system("CLS");
                               	goto next; 
 								break;     
                             case 260:
                             	v=3;
-                            	void category(int v, char *str, string s);
+                                category( v, str,  s);
                                 game(str);
+                                system("PAUSE");
+                                system("CLS");
                               	goto next; 
                                 break;
                                   
