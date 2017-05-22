@@ -1,13 +1,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "ctest.h"
-#include "hangman.h"
 
 
 CTEST(Speedtest,Validtest) {
     usleep(2000);
 }
-
+/*
 CTEST(test1, NULL) {
     const int ;
     int p=0;  
@@ -60,4 +59,4 @@ if(wrong!=MAX_WRONG)
       }
 
  ASSERT_EQUAL(9000, sum1);
-}
+}*/
