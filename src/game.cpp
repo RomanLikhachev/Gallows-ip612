@@ -77,8 +77,8 @@ void game(char *str)
            cout<<"\n"; 
             }
        cout<<"Ti prav! "<<guess<<" v slove est.\n";
-       
-       for(int i=0; i<THE_WORD.length(); ++i)
+       int n=THE_WORD.length();
+       for(int i=0; i<n; ++i)
        {
               if(THE_WORD[i]==guess)
               {
