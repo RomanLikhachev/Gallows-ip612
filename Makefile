@@ -23,7 +23,7 @@ bin/hangman: build/hangman.o build/category.o build/game.o
 
 test: hangman-test
 	
-hangman-test: build/hangman-test.o build/game-test.o build/category-test.o 
+bin/hangman-test: build/hangman-test.o build/game-test.o build/category-test.o 
 	gcc build/category-test.o build/game-test.o build/hangman-test.o  -o bin/hangman-test
 build/category-test.o: test/category-test.c
 	gcc $(TFLAGS) $(CFLAGS) test/category-test.c -o build/category-test.o
