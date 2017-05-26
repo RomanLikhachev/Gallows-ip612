@@ -16,13 +16,11 @@ int main(int argc, const char** argv)
 CTEST(Proverka,Proigrisha){
 	const int MAX_WRONG=8;
 	int wrong=8; 
-
-const char *str;
+        const char *str;
 	
-if(wrong==MAX_WRONG)
-      {
-      str="Tebya povesili!";
-          }
+	if(wrong==MAX_WRONG) {
+           str="Tebya povesili!";
+        }
 
 	ASSERT_STR("Tebya povesili!", str);
 }
@@ -30,28 +28,26 @@ if(wrong==MAX_WRONG)
 CTEST(Proverka,Pobedi){
 	const int MAX_WRONG=8;
 	int wrong=3; 
-
-const char *str;
+        const char *str;
 	
-if(wrong==MAX_WRONG)
-      {
-      str="Tebya povesili!";
-          }
-      else
-      {
-         str="You win!";
-          }
+	if(wrong==MAX_WRONG) {
+           str="Tebya povesili!";
+        }
+	
+        else {
+            str="You win!";
+         }
 
 	ASSERT_STR("You win!", str);
 }
 
 CTEST(Proverka,VvodnihDannih){
 	const char *str="1";
-	const int n=1; 
- if(n==1)
-       {
+	const int n=1;
+	
+	if(n==1) {
            str="Error!";
-           }
+        }
 
 	ASSERT_STR("Error!", str);
 }
@@ -69,10 +65,11 @@ CTEST(Proverka,EsliNashelBukvu){
 	const char *str;
 	const char *prov="Ti prav!";
 	const int n=1;
-	if(n==1)
-{
-	str="Ti prav!";
-}
+	
+	if(n==1) {
+	   str="Ti prav!";
+        }
+	
 	ASSERT_STR(prov, str);
 }
 
