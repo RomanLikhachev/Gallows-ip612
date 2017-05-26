@@ -1,15 +1,6 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <ctime>
-#include <cctype>
-#include <fstream>
 #include "hangman.h"
 #include <graphics.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
+
 using namespace std;
 
 int main()
@@ -21,6 +12,7 @@ int main()
      char *str = new char [1024];
      char p;
      int r=1;;
+     next:
      while(r==1)
      {
      initwindow (800,800);
@@ -128,23 +120,23 @@ int main()
                               	game(str); 
                               	system("PAUSE");
                               	system("CLS");
-               //               	goto next;
+                              	goto next;
 							  	break;   
                             case 180:
                             	v=2;
                             	 category( v, str, s);
                                 game(str);
                                 system("PAUSE");
-                                system("CLS");
-            //                  	goto next; 
+                               system("CLS");
+                             	goto next; 
 								break;     
                             case 260:
                             	v=3;
                                 category( v, str,  s);
                                 game(str);
-                                system("PAUSE");
+                               system("PAUSE");
                                 system("CLS");
-        //                      	goto next; 
+		                     	goto next;
                                 break;
                                   
                             
@@ -153,4 +145,5 @@ int main()
                          
                          }
                      }
+                     getch();
                }
