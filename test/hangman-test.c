@@ -9,15 +9,15 @@ CTEST(Speedtest,Validtest) {
 
 CTEST(wordtest,imputtest) {
     
-    const char buk='A';
-    const char guess ='A';                       
+    char buk='A';
+    char guess ='A';                       
 
     ASSERT_STR(guess,buk);
 }
 
 CTEST(wordtest,failtest){
      const char *str;
-     const int guess = 13;
+     int guess = 13;
 	
      if(guess >= 1 && guess <=999){
 	   str = "Error";
