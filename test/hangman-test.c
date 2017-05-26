@@ -6,57 +6,21 @@
 CTEST(Speedtest,Validtest) {
     usleep(2000);
 }
-/*
-CTEST(test1, NULL) {
-    const int ;
-    int p=0;  
-     
-                        
-    ASSERT_EQUAL(1, p);
-} 
 
 CTEST(wordtest,imputtest) {
     
-    const string buk="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const char buk='A';
     const char guess ='A';                       
 
-    ASSERT_EQUAL(guess,buk);
+    ASSERT_STR(guess,buk);
 }
 
-CTEST(categtest, checkcateg) {
-    
-    const int q=1;
-    const  ;                       
-
-    ASSERT_EQUAL(9000, sum1);
-}
-
-CTEST(filetest, openslovotext) {
-
-	const int p=0;
-	const int a=1;
-    
-    if ( (f = fopen("slovo.txt", "r")) == NULL )
-     {
+CTEST(wordtest,failtest){
+     const char *str;
+     const int guess = 13;
 	
-	 p=1;
-
-	 }                      
-
-    ASSERT_EQUAL(a,p);
+     if(guess >= 1 && guess <=999){
+	   str = "Error";
+     }
+     ASSERT_STR("Error",str);
 }
-
-
-CTEST(categtest, checkcateg) {
-    
-    const int q=3;
-    const int ;                       
-
-
-if(wrong!=MAX_WRONG)
-{
-      THE_WORD;
-      }
-
- ASSERT_EQUAL(9000, sum1);
-}*/
