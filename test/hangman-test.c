@@ -7,14 +7,6 @@ CTEST(Speedtest,Validtest) {
     usleep(2000);
 }
 
-CTEST(wordtest,imputtest) {
-    
-    char buk='A';
-    char guess ='A';                       
-
-    ASSERT_STR(guess,buk);
-}
-
 CTEST(wordtest,failtest){
      const char *str;
      int guess = 13;
